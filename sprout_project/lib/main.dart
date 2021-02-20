@@ -1,10 +1,101 @@
+//import 'package:flutter/material.dart';
+
+/*void main() {
+  runApp(MyApp());
+}*/
+
+//import 'package:flutter/material.dart';
+
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
+void main() => runApp(App());
+
+class App extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Navigation',
+      home: MainPage(),
+    );
+  }
 }
 
-class MyApp extends StatelessWidget {
+class MainPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Welcome Back [person]'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text(
+              'Looking good, [person].',
+              style: TextStyle(
+                fontSize: 20,
+              ),
+            ),
+            //Text(),
+            //Text('Here is how'),
+            RaisedButton(
+              textColor: Colors.blue,
+              color: Colors.white,
+              child: Text('Here is how'),
+              onPressed: () {
+                navigateToSubPage(context);
+              },
+            ),
+            Text(
+              'you can do better.',
+              style: TextStyle(
+                fontSize: 20,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Future navigateToSubPage(context) async {
+    Navigator.push(context, MaterialPageRoute(builder: (context) => SubPage()));
+  }
+}
+
+class SubPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Weekly Recommendations'),
+        backgroundColor: Colors.redAccent,
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text('Click button to back to Main Page'),
+            RaisedButton(
+              textColor: Colors.white,
+              color: Colors.redAccent,
+              child: Text('Back to Main Page'),
+              onPressed: () {
+                backToMainPage(context);
+              },
+            )
+          ],
+        ),
+      ),
+    );
+  }
+
+  void backToMainPage(context) {
+    Navigator.pop(context);
+  }
+}
+/*class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -115,3 +206,4 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+*/
