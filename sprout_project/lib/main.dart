@@ -1,5 +1,3 @@
-//import 'package:flutter/material.dart';
-
 import 'package:flutter/material.dart';
 
 void main() => runApp(App());
@@ -47,6 +45,32 @@ class MainPage extends StatelessWidget {
                 fontSize: 20,
               ),
             ),
+            Container(
+              margin: EdgeInsets.fromLTRB(5, 50, 300, 2),
+              alignment: Alignment.bottomLeft,
+              child: IconButton(
+                  icon: Icon(
+                    Icons.attach_money_outlined,
+                  ),
+                  onPressed: () {
+                    return showDialog(
+                      context: context,
+                      builder: (ctx) => AlertDialog(
+                        title: Text("Tip of the Day"),
+                        content: Text(
+                            "Investing in healthcare ASAP could give you a booming return, recent studies show."),
+                        actions: <Widget>[
+                          FlatButton(
+                            onPressed: () {
+                              Navigator.of(ctx).pop();
+                            },
+                            child: Text("Great!"),
+                          ),
+                        ],
+                      ),
+                    );
+                  }),
+            ),
           ],
         ),
       ),
@@ -69,6 +93,7 @@ class SubPage extends StatelessWidget {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Text('Click button to back to Main Page'),
             RaisedButton(
