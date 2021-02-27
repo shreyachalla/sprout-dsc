@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+//import 'package:finance_quote/finance_quote.dart';
 
 void main() => runApp(App());
 
@@ -29,8 +30,6 @@ class MainPage extends StatelessWidget {
                 fontSize: 20,
               ),
             ),
-            //Text(),
-            //Text('Here is how'),
             RaisedButton(
               textColor: Colors.blue,
               color: Colors.white,
@@ -80,7 +79,16 @@ class MainPage extends StatelessWidget {
   Future navigateToSubPage(context) async {
     Navigator.push(context, MaterialPageRoute(builder: (context) => SubPage()));
   }
+  //final Map<String, Map<String, String>> quotePrice = quotePrices();
+
+  /*Future Map<String, Map<String, String>> async quotePrices() {
+    return await FinanceQuote.getPrice(
+        quoteProvider: QuoteProvider.yahoo, symbols: <String>['KO']);
+  }*/
 }
+
+//final Map<String, Map<String, String>> quotePrice = await FinanceQuote.getPrice(
+//   quoteProvider: QuoteProvider.yahoo, symbols: <String>['KO']);
 
 class SubPage extends StatelessWidget {
   @override
