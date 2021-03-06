@@ -71,7 +71,34 @@ class PortfolioPage extends StatelessWidget {
               ]),
             ],
           ),
-        ));
+        ),
+      bottomNavigationBar: BottomNavigationBar(
+      currentIndex: 0,
+      items: [
+        BottomNavigationBarItem(
+            icon: IconButton(
+              icon: Icon(
+                Icons.access_time,
+              ),
+            ),
+            label: '\$5000.00'),
+        BottomNavigationBarItem(
+            icon: IconButton(
+              icon: Icon(
+                Icons.access_time,
+              ),
+            ),
+            label: '\$15000.00'),
+        BottomNavigationBarItem(
+            icon: IconButton(
+              icon: Icon(
+                Icons.access_time,
+              ),
+            ),
+            label: '\$25000.00')
+      ],
+    ),
+    );
   }
 
   Future navigateToPortfolioSubPage(context) async {
