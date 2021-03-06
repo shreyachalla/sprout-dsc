@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'news.dart';
 import 'portfolio.dart';
 import 'home.dart';
+
 import 'future.dart';
+
+//import 'stocks.dart';
 
 void main() {
   runApp(Outline());
