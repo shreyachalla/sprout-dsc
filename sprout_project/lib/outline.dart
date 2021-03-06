@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'news.dart';
 import 'portfolio.dart';
 import 'home.dart';
+import 'stocks.dart';
 
 void main() {
   runApp(Outline());
@@ -40,6 +41,16 @@ class OutlineState extends State<Outline> {
           BottomNavigationBarItem(
               icon: IconButton(
                 icon: Icon(
+                  Icons.mood,
+                ),
+                onPressed: () {
+                  navigateToStocks(context);
+                },
+              ),
+              label: 'Stocks Grid'),
+          BottomNavigationBarItem(
+              icon: IconButton(
+                icon: Icon(
                   Icons.laptop_chromebook_sharp,
                 ),
                 onPressed: () {
@@ -65,6 +76,10 @@ class OutlineState extends State<Outline> {
   Future navigateToHomePage(context) async {
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => MainPage()));
+  }
+  Future navigateToStocks(context) async {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => Stocks()));
   }
 }
 
