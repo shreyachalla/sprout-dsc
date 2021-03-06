@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'news.dart';
+import 'portfolio.dart';
+import 'home.dart';
 
 void main() {
   runApp(Outline());
@@ -14,7 +17,16 @@ class OutlineState extends State<Outline> {
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: 0,
         items: [
-          BottomNavigationBarItem(icon: new Icon(Icons.home), label: 'Home'),
+          BottomNavigationBarItem(
+              icon: IconButton(
+                icon: Icon(
+                  Icons.home,
+                ),
+                onPressed: () {
+                  navigateToHomePage(context);
+                },
+              ),
+              label: 'Home Page'),
           BottomNavigationBarItem(
               icon: IconButton(
                 icon: Icon(
@@ -49,77 +61,10 @@ class OutlineState extends State<Outline> {
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => NewsPage()));
   }
-}
 
-class PortfolioPage extends StatelessWidget {
-  Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: Text('Stock Market'),
-          backgroundColor: Colors.redAccent,
-        ),
-        body: Center(
-          child: Table(
-            border: TableBorder.all(color: Colors.white),
-            children: [
-              TableRow(children: [
-                Icon(
-                  Icons.attach_money_outlined,
-                ),
-                Icon(
-                  Icons.attach_money_outlined,
-                ),
-              ]),
-              TableRow(children: [
-                Icon(
-                  Icons.attach_money_outlined,
-                ),
-                Icon(
-                  Icons.attach_money_outlined,
-                ),
-              ]),
-              TableRow(children: [
-                Icon(
-                  Icons.attach_money_outlined,
-                ),
-                Icon(
-                  Icons.attach_money_outlined,
-                ),
-              ]),
-            ],
-          ),
-        ));
-  }
-}
-
-class NewsPage extends StatelessWidget {
-  Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: Text('News Page'),
-          backgroundColor: Colors.redAccent,
-        ),
-        body: Center(
-            child: ListView(
-          padding: EdgeInsets.all(10),
-          children: [
-            Container(
-              height: 50,
-              color: Colors.amber[600],
-              child: const Center(child: Text('News A')),
-            ),
-            Container(
-              height: 50,
-              color: Colors.amber[500],
-              child: const Center(child: Text('News B')),
-            ),
-            Container(
-              height: 50,
-              color: Colors.amber[100],
-              child: const Center(child: Text('News C')),
-            ),
-          ],
-        )));
+  Future navigateToHomePage(context) async {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => MainPage()));
   }
 }
 
