@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'news.dart';
 import 'portfolio.dart';
 import 'home.dart';
+import 'future.dart';
 
 void main() {
   runApp(Outline());
@@ -47,6 +48,16 @@ class OutlineState extends State<Outline> {
                 },
               ),
               label: 'News'),
+          BottomNavigationBarItem(
+              icon: IconButton(
+                icon: Icon(
+                  Icons.laptop_chromebook_sharp,
+                ),
+                onPressed: () {
+                  navigateToFuturePage(context);
+                },
+              ),
+              label: 'News'),
         ],
       ),
     );
@@ -65,6 +76,11 @@ class OutlineState extends State<Outline> {
   Future navigateToHomePage(context) async {
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => MainPage()));
+  }
+
+  Future navigateToFuturePage(context) async {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => FuturePage()));
   }
 }
 

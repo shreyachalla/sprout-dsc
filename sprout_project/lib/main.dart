@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'news.dart';
 import 'portfolio.dart';
 import 'outline.dart';
+import 'future.dart';
 
 void main() => runApp(App());
 
