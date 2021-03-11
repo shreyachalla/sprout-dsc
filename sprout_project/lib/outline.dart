@@ -16,6 +16,7 @@ class OutlineState extends State<Outline> {
         title: Text('Sprout'),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
         currentIndex: 0,
         items: [
           BottomNavigationBarItem(
@@ -57,7 +58,7 @@ class OutlineState extends State<Outline> {
                   navigateToFuturePage(context);
                 },
               ),
-              label: 'News'),
+              label: 'Future'),
         ],
       ),
     );
