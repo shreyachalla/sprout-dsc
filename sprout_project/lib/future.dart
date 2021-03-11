@@ -9,11 +9,11 @@ class FuturePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Pie Chart Demo',
+      title: 'Plan Your Future',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Pie Chart Demo'),
+      home: MyHomePage(title: 'Plan Your Future'),
     );
   }
 
@@ -32,15 +32,22 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final myController = TextEditingController();
+  final myController1 = TextEditingController();
+  final myController2 = TextEditingController();
+  final myController3 = TextEditingController();
+  final myController4 = TextEditingController();
   var saved = "";
 
   Map<String, double> data = new Map();
   bool _loadChart = false;
   @override
   void initState() {
-    data.addAll(
-        {'Family': 20000, 'Education': 69687, 'Home': 40609, 'General': 42544});
+    data.addAll({
+      'Family': 0,
+      'Education': 0.0,
+      'Home': 0,
+      'General': 0,
+    });
     super.initState();
   }
 
@@ -50,6 +57,32 @@ class _MyHomePageState extends State<MyHomePage> {
     Colors.amberAccent,
     Colors.redAccent
   ];
+  var title1;
+  var title2;
+  var title3;
+  var title4;
+  var text = "";
+  double changed;
+
+  void _setText() {
+    setState(() {
+      text = 'Family' +
+          title1 +
+          'Education' +
+          title2 +
+          'Home' +
+          title3 +
+          'General' +
+          title4;
+      changed = double.parse(title1);
+      data.addAll({
+        'Family': double.parse(title1),
+        'Education': double.parse(title2),
+        'Home': double.parse(title3),
+        'General': double.parse(title4)
+      });
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -60,25 +93,48 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: Column(
           children: <Widget>[
-            SizedBox(
+            /*SizedBox(
               height: 50,
-            ),
+            ),*/
+            Text("Family"),
             TextField(
-              controller: myController,
+              controller: myController1,
               decoration: InputDecoration(
                   border: InputBorder.none, hintText: 'Enter a search term'),
+              onChanged: (value1) => title1 = value1,
+            ),
+            Text("Education"),
+            TextField(
+              controller: myController2,
+              decoration: InputDecoration(
+                  border: InputBorder.none, hintText: 'Enter a search term'),
+              onChanged: (value) => title2 = value,
+            ),
+            Text("Home"),
+            TextField(
+              controller: myController3,
+              decoration: InputDecoration(
+                  border: InputBorder.none, hintText: 'Enter a search term'),
+              onChanged: (value) => title3 = value,
+            ),
+            Text("General"),
+            TextField(
+              controller: myController4,
+              decoration: InputDecoration(
+                  border: InputBorder.none, hintText: 'Enter a search term'),
+              onChanged: (value) => title4 = value,
+            ),
+            RaisedButton(
+              onPressed: _setText,
+              child: Text('Submit'),
+              elevation: 8,
             ),
             Text(
               'Percentage of Savings',
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
-            Row(
-              children: <Widget>[
-                Text("Hi, Your Name is :   " + myController.text),
-              ],
-            ),
-            Text(myController.text),
+            Text(text),
             SizedBox(
               height: 50,
             ),
