@@ -91,105 +91,107 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: Column(
-          children: <Widget>[
-            /*SizedBox(
+        child: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              /*SizedBox(
               height: 50,
             ),*/
-            Text("Family"),
-            TextField(
-              controller: myController1,
-              decoration: InputDecoration(
-                  border: InputBorder.none, hintText: 'Enter a search term'),
-              onChanged: (value1) => title1 = value1,
-            ),
-            Text("Education"),
-            TextField(
-              controller: myController2,
-              decoration: InputDecoration(
-                  border: InputBorder.none, hintText: 'Enter a search term'),
-              onChanged: (value) => title2 = value,
-            ),
-            Text("Home"),
-            TextField(
-              controller: myController3,
-              decoration: InputDecoration(
-                  border: InputBorder.none, hintText: 'Enter a search term'),
-              onChanged: (value) => title3 = value,
-            ),
-            Text("General"),
-            TextField(
-              controller: myController4,
-              decoration: InputDecoration(
-                  border: InputBorder.none, hintText: 'Enter a search term'),
-              onChanged: (value) => title4 = value,
-            ),
-            RaisedButton(
-              onPressed: _setText,
-              child: Text('Submit'),
-              elevation: 8,
-            ),
-            Text(
-              'Percentage of Savings',
-              textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-            ),
-            Text(text),
-            SizedBox(
-              height: 50,
-            ),
-            _loadChart
-                ? PieChart(
-                    dataMap: data,
-                    colorList:
-                        _colors, // if not declared, random colors will be chosen
-                    animationDuration: Duration(milliseconds: 1500),
-                    chartLegendSpacing: 32.0,
-                    chartRadius: MediaQuery.of(context).size.width /
-                        2.7, //determines the size of the chart
-                    showChartValuesInPercentage: true,
-                    showChartValues: true,
-                    showChartValuesOutside: false,
-                    chartValueBackgroundColor: Colors.grey[200],
-                    showLegends: true,
-                    legendPosition: LegendPosition
-                        .right, //can be changed to top, left, bottom
-                    decimalPlaces: 1,
-                    showChartValueLabel: true,
-                    initialAngle: 0,
-                    chartValueStyle: defaultChartValueStyle.copyWith(
-                      color: Colors.blueGrey[900].withOpacity(0.9),
+              Text("Family"),
+              TextField(
+                controller: myController1,
+                decoration: InputDecoration(
+                    border: InputBorder.none, hintText: 'Enter a search term'),
+                onChanged: (value1) => title1 = value1,
+              ),
+              Text("Education"),
+              TextField(
+                controller: myController2,
+                decoration: InputDecoration(
+                    border: InputBorder.none, hintText: 'Enter a search term'),
+                onChanged: (value) => title2 = value,
+              ),
+              Text("Home"),
+              TextField(
+                controller: myController3,
+                decoration: InputDecoration(
+                    border: InputBorder.none, hintText: 'Enter a search term'),
+                onChanged: (value) => title3 = value,
+              ),
+              Text("General"),
+              TextField(
+                controller: myController4,
+                decoration: InputDecoration(
+                    border: InputBorder.none, hintText: 'Enter a search term'),
+                onChanged: (value) => title4 = value,
+              ),
+              RaisedButton(
+                onPressed: _setText,
+                child: Text('Submit'),
+                elevation: 8,
+              ),
+              Text(
+                'Percentage of Savings',
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              ),
+              Text(text),
+              SizedBox(
+                height: 50,
+              ),
+              _loadChart
+                  ? PieChart(
+                      dataMap: data,
+                      colorList:
+                          _colors, // if not declared, random colors will be chosen
+                      animationDuration: Duration(milliseconds: 1500),
+                      chartLegendSpacing: 32.0,
+                      chartRadius: MediaQuery.of(context).size.width /
+                          2.7, //determines the size of the chart
+                      showChartValuesInPercentage: true,
+                      showChartValues: true,
+                      showChartValuesOutside: false,
+                      chartValueBackgroundColor: Colors.grey[200],
+                      showLegends: true,
+                      legendPosition: LegendPosition
+                          .right, //can be changed to top, left, bottom
+                      decimalPlaces: 1,
+                      showChartValueLabel: true,
+                      initialAngle: 0,
+                      chartValueStyle: defaultChartValueStyle.copyWith(
+                        color: Colors.blueGrey[900].withOpacity(0.9),
+                      ),
+                      chartType:
+                          ChartType.disc, //can be changed to ChartType.ring
+                    )
+                  : SizedBox(
+                      height: 150,
                     ),
-                    chartType:
-                        ChartType.disc, //can be changed to ChartType.ring
-                  )
-                : SizedBox(
-                    height: 150,
-                  ),
-            SizedBox(
-              height: 50,
-            ),
-            RaisedButton(
-              color: Colors.blue,
-              child: Text(
-                'Click to Show Chart',
-                style: TextStyle(color: Colors.white),
+              SizedBox(
+                height: 50,
               ),
-              onPressed: () {
-                setState(() {
-                  _loadChart = true;
-                });
-              },
-            ),
-            IconButton(
-              icon: Icon(
-                Icons.backup,
+              RaisedButton(
+                color: Colors.blue,
+                child: Text(
+                  'Click to Show Chart',
+                  style: TextStyle(color: Colors.white),
+                ),
+                onPressed: () {
+                  setState(() {
+                    _loadChart = true;
+                  });
+                },
               ),
-              onPressed: () {
-                navigateToHomePage(context);
-              },
-            ),
-          ],
+              IconButton(
+                icon: Icon(
+                  Icons.backup,
+                ),
+                onPressed: () {
+                  navigateToHomePage(context);
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );
