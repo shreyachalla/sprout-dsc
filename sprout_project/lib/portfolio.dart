@@ -11,67 +11,103 @@ class PortfolioPage extends StatelessWidget {
           title: Text('Stock Market'),
           backgroundColor: Colors.redAccent,
         ),
-        body: Center(
+        body: SingleChildScrollView (child : Center(
           child: Table(
             border: TableBorder.all(color: Colors.white),
             children: [
               TableRow(children: [
-                RaisedButton(
+              RaisedButton(
                   textColor: Colors.blue,
                   color: Colors.white,
-                  child: Text('AAPL'),
+                  padding: EdgeInsets.all(10.0),
+                  child: Column( // Replace with a Row for horizontal icon + text
+                    children: <Widget>[
+                      Image.network('https://g.foolcdn.com/art/companylogos/square/aapl.png', height: 135,
+                        width: 100),
+                      Text("AAPL")
+                ]),
                   onPressed: () {
                     navigateToPortfolioSubPage(context);
-                  },
-                ),
+                  }
+              ),
                 RaisedButton(
-                  textColor: Colors.blue,
-                  color: Colors.white,
-                  child: Text('AAPL'),
-                  onPressed: () {
-                    navigateToPortfolioSubPage(context);
-                  },
-                ),
-              ]),
-              TableRow(children: [
-                RaisedButton(
-                  textColor: Colors.blue,
-                  color: Colors.white,
-                  child: Text('AAPL'),
-                  onPressed: () {
-                    navigateToPortfolioSubPage(context);
-                  },
-                ),
-                RaisedButton(
-                  textColor: Colors.blue,
-                  color: Colors.white,
-                  child: Text('AAPL'),
-                  onPressed: () {
-                    navigateToPortfolioSubPage(context);
-                  },
+                    textColor: Colors.blue,
+                    color: Colors.white,
+                    padding: EdgeInsets.all(10.0),
+                    child: Column( // Replace with a Row for horizontal icon + text
+                        children: <Widget>[
+                          Image.network('https://g.foolcdn.com/art/companylogos/square/msft.png', height: 135,
+                              width: 100),
+                          Text("MSFT")
+                        ]),
+                    onPressed: () {
+                      navigateToPortfolioSubPage(context);
+                    }
                 ),
               ]),
               TableRow(children: [
                 RaisedButton(
-                  textColor: Colors.blue,
-                  color: Colors.white,
-                  child: Text('AAPL'),
-                  onPressed: () {
-                    navigateToPortfolioSubPage(context);
-                  },
+                    textColor: Colors.blue,
+                    color: Colors.white,
+                    padding: EdgeInsets.all(10.0),
+                    child: Column( // Replace with a Row for horizontal icon + text
+                        children: <Widget>[
+                          Image.network('https://www.carlogos.org/car-logos/tesla-logo-2200x2800.png', height: 135,
+                              width: 100),
+                          Text("TSLA")
+                        ]),
+                    onPressed: () {
+                      navigateToPortfolioSubPage(context);
+                    }
                 ),
                 RaisedButton(
-                  textColor: Colors.blue,
-                  color: Colors.white,
-                  child: Text('AAPL'),
-                  onPressed: () {
-                    navigateToPortfolioSubPage(context);
-                  },
+                    textColor: Colors.blue,
+                    color: Colors.white,
+                    padding: EdgeInsets.all(10.0),
+                    child: Column( // Replace with a Row for horizontal icon + text
+                        children: <Widget>[
+                          Image.network('https://i.pinimg.com/originals/08/5f/d8/085fd8f7819dee3b716da73d3b2de61c.jpg', height: 135,
+                              width: 100),
+                          Text("AMZN")
+                        ]),
+                    onPressed: () {
+                      navigateToPortfolioSubPage(context);
+                    }
+                ),
+              ]),
+              TableRow(children: [
+                RaisedButton(
+                    textColor: Colors.blue,
+                    color: Colors.white,
+                    padding: EdgeInsets.all(10.0),
+                    child: Column( // Replace with a Row for horizontal icon + text
+                        children: <Widget>[
+                          Image.network('https://blog.hubspot.com/hubfs/image8-2.jpg', height: 135,
+                              width: 100),
+                          Text("GOOGL")
+                        ]),
+                    onPressed: () {
+                      navigateToPortfolioSubPage(context);
+                    }
+                ),
+                RaisedButton(
+                    textColor: Colors.blue,
+                    color: Colors.white,
+                    padding: EdgeInsets.all(10.0),
+                    child: Column( // Replace with a Row for horizontal icon + text
+                        children: <Widget>[
+                          Image.network('https://logodix.com/logo/26194.jpg', height: 135,
+                              width: 100),
+                          Text("SNE")
+                        ]),
+                    onPressed: () {
+                      navigateToPortfolioSubPage(context);
+                    }
                 ),
               ]),
             ],
           ),
-        ),
+        )),
       bottomNavigationBar: BottomNavigationBar(
       currentIndex: 0,
       items: [
