@@ -113,22 +113,22 @@ class PortfolioPage extends StatelessWidget {
       items: [
         BottomNavigationBarItem(
             icon: IconButton(
-              icon: Icon(
-                Icons.access_time,
-              ),
+              icon: Image.network(
+                'https://static.thenounproject.com/png/3202639-200.png'
+              )
             ),
             label: '\$5000.00'),
         BottomNavigationBarItem(
             icon: IconButton(
-              icon: Icon(
-                Icons.access_time,
-              ),
+              icon: Image.network(
+                  'https://static.thenounproject.com/png/247254-200.png'
+              )
             ),
             label: '\$15000.00'),
         BottomNavigationBarItem(
             icon: IconButton(
-              icon: Icon(
-                Icons.access_time,
+              icon: Image.network(
+                  'https://static.thenounproject.com/png/247259-200.png'
               ),
             ),
             label: '\$25000.00')
