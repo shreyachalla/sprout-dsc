@@ -2,36 +2,27 @@ import 'package:flutter/material.dart';
 import 'package:pie_chart/pie_chart.dart'; // import the package
 import 'outline.dart';
 
-void main() => runApp(FuturePage());
+//import 'package:flutter/material.dart';
 
-class FuturePage extends StatelessWidget {
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Plan Your Future',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: MyHomePage(title: 'Plan Your Future'),
-    );
-  }
-
-  //Back to main page
-  void backToMainPage(context) {
-    Navigator.pop(context);
+    return MaterialApp(home: MyAppPage());
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-  final String title;
-
+class MyAppPage extends StatefulWidget {
+  MyAppPage({
+    Key key,
+  }) : super(key: key);
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  MyAppPageState createState() => MyAppPageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class MyAppPageState extends State<MyAppPage> {
   final myController1 = TextEditingController();
   final myController2 = TextEditingController();
   final myController3 = TextEditingController();
@@ -81,6 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
         'Home': double.parse(title3),
         'General': double.parse(title4)
       });
+      _loadChart = true;
     });
   }
 
@@ -88,56 +80,74 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text('Plan Your Future'),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () => navigateToHomePage(context),
+        ),
       ),
-      body: Center(
+      body: new Padding(
+        padding: const EdgeInsets.all(16.0),
         child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
-              /*SizedBox(
-              height: 50,
-            ),*/
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                'Enter your estimated savings needed in each area',
+                style: TextStyle(fontSize: 18),
+              ),
+              SizedBox(
+                height: 20,
+              ),
               Text("Family"),
               TextField(
                 controller: myController1,
                 decoration: InputDecoration(
-                    border: InputBorder.none, hintText: 'Enter a search term'),
+                    border: InputBorder.none, hintText: 'Enter an amount here'),
                 onChanged: (value1) => title1 = value1,
               ),
               Text("Education"),
               TextField(
                 controller: myController2,
                 decoration: InputDecoration(
-                    border: InputBorder.none, hintText: 'Enter a search term'),
+                    border: InputBorder.none, hintText: 'Enter an amount here'),
                 onChanged: (value) => title2 = value,
               ),
               Text("Home"),
               TextField(
                 controller: myController3,
                 decoration: InputDecoration(
-                    border: InputBorder.none, hintText: 'Enter a search term'),
+                    border: InputBorder.none, hintText: 'Enter an amount here'),
                 onChanged: (value) => title3 = value,
               ),
               Text("General"),
               TextField(
                 controller: myController4,
                 decoration: InputDecoration(
-                    border: InputBorder.none, hintText: 'Enter a search term'),
+                    border: InputBorder.none, hintText: 'Enter an amount here'),
                 onChanged: (value) => title4 = value,
               ),
               RaisedButton(
+                color: Colors.blue,
+                child: Text(
+                  'Click to Show Chart',
+                  style: TextStyle(color: Colors.white),
+                ),
                 onPressed: _setText,
-                child: Text('Submit'),
-                elevation: 8,
+              ),
+              SizedBox(
+                height: 20,
               ),
               Text(
                 'Percentage of Savings',
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
-              Text(text),
+              //Text(text),
               SizedBox(
-                height: 50,
+                height: 10,
               ),
               _loadChart
                   ? PieChart(
@@ -169,26 +179,6 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
               SizedBox(
                 height: 50,
-              ),
-              RaisedButton(
-                color: Colors.blue,
-                child: Text(
-                  'Click to Show Chart',
-                  style: TextStyle(color: Colors.white),
-                ),
-                onPressed: () {
-                  setState(() {
-                    _loadChart = true;
-                  });
-                },
-              ),
-              IconButton(
-                icon: Icon(
-                  Icons.backup,
-                ),
-                onPressed: () {
-                  navigateToHomePage(context);
-                },
               ),
             ],
           ),
