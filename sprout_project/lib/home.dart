@@ -15,6 +15,7 @@ class MainPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Image(image: AssetImage('lib/Graph.png')),
             Text(
               'Looking good, [person].',
               style: TextStyle(
@@ -37,10 +38,10 @@ class MainPage extends StatelessWidget {
             ),
             Container(
               margin: EdgeInsets.fromLTRB(5, 50, 300, 2),
-              alignment: Alignment.bottomLeft,
+              alignment: Alignment.bottomCenter,
               child: IconButton(
                   icon: Icon(
-                    Icons.attach_money_outlined,
+                    Icons.lightbulb,
                   ),
                   onPressed: () {
                     return showDialog(

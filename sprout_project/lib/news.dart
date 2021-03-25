@@ -16,19 +16,23 @@ class NewsPage extends StatelessWidget {
           padding: EdgeInsets.all(10),
           children: [
             Container(
-              height: 50,
+              height: 100,
               color: Colors.amber[600],
-              child: const Center(child: Text('News A')),
+              child:
+                  const Center(child: Text('Economists foreshadow recession')),
             ),
             Container(
-              height: 50,
+              height: 100,
               color: Colors.amber[500],
-              child: const Center(child: Text('News B')),
+              child: const Center(
+                  child: Text(
+                      'Unemployment rate decreases as vacination rates rise')),
             ),
             Container(
-              height: 50,
+              height: 100,
               color: Colors.amber[100],
-              child: const Center(child: Text('News C')),
+              child: const Center(
+                  child: Text('Gamestop stock value increases once again')),
             ),
           ],
         )));
