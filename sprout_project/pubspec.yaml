@@ -47,6 +47,7 @@ flutter:
     - lib/SNE.png
     - lib/TSLA.png
     - lib/Graph.png
+    - lib/ProgressCircle-20.png
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.

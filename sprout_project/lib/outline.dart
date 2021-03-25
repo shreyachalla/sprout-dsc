@@ -22,7 +22,8 @@ class Outline extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Image(image: AssetImage('lib/Graph.png'), height: 300, width: 400),
+            Image(image: AssetImage('lib/ProgressCircle-20.png'), height: 70, width: 80),
+            Image(image: AssetImage('lib/Graph.png'), height: 270, width: 400),
             Text(
               'Looking good, [person].',
               style: TextStyle(

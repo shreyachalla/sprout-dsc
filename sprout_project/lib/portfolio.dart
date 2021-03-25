@@ -156,7 +156,14 @@ class PortfolioSubPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.end,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Image(image: AssetImage('lib/' + name + '.png'), height: 455, width: 450),
+            Image(image: AssetImage('lib/' + name + '.png'), height: 440, width: 450),
+                Text(
+                  'Tell me about...',
+                  style: TextStyle(
+                      color: Colors.purple,
+                      fontSize: 15),
+                ),
+           // Text('Tell me about...'),
             Table(
               border: TableBorder.all(color: Colors.white),
               children: [

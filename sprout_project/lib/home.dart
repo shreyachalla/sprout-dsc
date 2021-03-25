@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -94,16 +95,34 @@ class SubPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Text('Click button to back to Main Page'),
-            RaisedButton(
+            Container(
+              margin: EdgeInsets.fromLTRB(90, 0, 100, 0),
+              height: 100,
+              width: 400,
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                border: Border.all(
+                    width: 3.0
+                ),
+                borderRadius: BorderRadius.all(
+                    Radius.circular(5.0) //                 <--- border radius here
+                ),
+                  color: Colors.teal
+              ),
+              child: Text('AAPL stocks are quickly increasing in value at the expense of SNE valuation. Consider purchasing additional AAPL stock units while maintaining a stable SNE stock base.', textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 14, color: Colors.white)),
+            ),
+        Container(
+            margin : EdgeInsets.fromLTRB(120, 30, 0, 0),
+            child: RaisedButton(
               textColor: Colors.white,
               color: Colors.redAccent,
               child: Text('Back to Main Page'),
               onPressed: () {
-                backToMainPage(context);
-              },
-            )
-          ],
+            backToMainPage(context);
+          },
+        )
+        )],
         ),
       ),
     );
