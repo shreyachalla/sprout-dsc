@@ -22,6 +22,7 @@ class Outline extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Image(image: AssetImage('lib/Graph.png'), height: 300, width: 400),
             Text(
               'Looking good, [person].',
               style: TextStyle(
@@ -43,12 +44,20 @@ class Outline extends StatelessWidget {
               ),
             ),
             Container(
-              margin: EdgeInsets.fromLTRB(5, 50, 300, 2),
-              alignment: Alignment.bottomLeft,
-              child: IconButton(
-                  icon: Icon(
-                    Icons.attach_money_outlined,
+              margin: EdgeInsets.fromLTRB(110, 40, 120, 2),
+              alignment: Alignment.bottomCenter,
+              child: SizedBox (
+                  height: 40,
+                  width: 60,
+                  child: RaisedButton(
+                  child: Icon(
+                    Icons.lightbulb_outline,
+                    color: Colors.green,
+                    size: 30,
+
                   ),
+                  color: Colors.yellowAccent,
+                  shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(500.0)),
                   onPressed: () {
                     return showDialog(
                       context: context,
@@ -66,7 +75,7 @@ class Outline extends StatelessWidget {
                         ],
                       ),
                     );
-                  }),
+                  })),
             ),
           ],
         ),

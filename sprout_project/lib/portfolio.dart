@@ -30,7 +30,7 @@ class PortfolioPage extends StatelessWidget {
                     Text("AAPL")
                   ]),
                   onPressed: () {
-                    navigateToPortfolioSubPage(context);
+                    navigateToPortfolioSubPage(context, 'AAPL');
                   }),
               RaisedButton(
                   textColor: Colors.blue,
@@ -45,7 +45,7 @@ class PortfolioPage extends StatelessWidget {
                     Text("MSFT")
                   ]),
                   onPressed: () {
-                    navigateToPortfolioSubPage(context);
+                    navigateToPortfolioSubPage(context,  'MSFT');
                   }),
             ]),
             TableRow(children: [
@@ -62,7 +62,7 @@ class PortfolioPage extends StatelessWidget {
                     Text("TSLA")
                   ]),
                   onPressed: () {
-                    navigateToPortfolioSubPage(context);
+                    navigateToPortfolioSubPage(context, 'TSLA');
                   }),
               RaisedButton(
                   textColor: Colors.blue,
@@ -77,7 +77,7 @@ class PortfolioPage extends StatelessWidget {
                     Text("AMZN")
                   ]),
                   onPressed: () {
-                    navigateToPortfolioSubPage(context);
+                    navigateToPortfolioSubPage(context, 'AMZN');
                   }),
             ]),
             TableRow(children: [
@@ -92,7 +92,7 @@ class PortfolioPage extends StatelessWidget {
                     Text("GOOGL")
                   ]),
                   onPressed: () {
-                    navigateToPortfolioSubPage(context);
+                    navigateToPortfolioSubPage(context, 'GOOGL');
                   }),
               RaisedButton(
                   textColor: Colors.blue,
@@ -105,7 +105,7 @@ class PortfolioPage extends StatelessWidget {
                     Text("SNE")
                   ]),
                   onPressed: () {
-                    navigateToPortfolioSubPage(context);
+                    navigateToPortfolioSubPage(context, 'SNE');
                   }),
             ]),
           ],
@@ -135,18 +135,20 @@ class PortfolioPage extends StatelessWidget {
     );
   }
 
-  Future navigateToPortfolioSubPage(context) async {
+  Future navigateToPortfolioSubPage(context, name) async {
     Navigator.push(
-        context, MaterialPageRoute(builder: (context) => PortfolioSubPage()));
+        context, MaterialPageRoute(builder: (context) => PortfolioSubPage(name: name)));
   }
 }
 
 class PortfolioSubPage extends StatelessWidget {
+  final String name;
+  PortfolioSubPage({Key key, @required this.name}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Stock Performance: AAPL'),
+        title: Text('Stock Performance: ' + name),
         backgroundColor: Colors.redAccent,
       ),
       body: Center(
@@ -154,6 +156,7 @@ class PortfolioSubPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.end,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
+            Image(image: AssetImage('lib/' + name + '.png'), height: 455, width: 450),
             Table(
               border: TableBorder.all(color: Colors.white),
               children: [

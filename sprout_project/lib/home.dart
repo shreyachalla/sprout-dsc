@@ -15,7 +15,6 @@ class MainPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Image(image: AssetImage('lib/Graph.png')),
             Text(
               'Looking good, [person].',
               style: TextStyle(
