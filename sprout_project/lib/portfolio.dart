@@ -8,7 +8,18 @@ class PortfolioPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Stock Market'),
+          title: Row(
+            children: <Widget>[
+              Text(
+                'Stock Market',
+              ),
+              Image(
+                  image: AssetImage('lib/SproutSavings.jpg'), height: 70, width: 80
+              )
+            ],
+          ),
+        //leading: Image(image: AssetImage('lib/SproutSavings.jpg'), height: 70, width: 80), // you can put Icon as well, it accepts any widget.
+        //title: Text(''),
         backgroundColor: Colors.redAccent,
       ),
       body: SingleChildScrollView(

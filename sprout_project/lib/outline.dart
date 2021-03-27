@@ -16,7 +16,17 @@ class Outline extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sprout'),
+        //leading: Image(image: AssetImage('lib/SproutSavings.jpg'), height: 70, width: 80), // you can put Icon as well, it accepts any widget.
+        title: Row(
+          children: <Widget>[
+            Text(
+              'Sprout',
+            ),
+            Image(
+                image: AssetImage('lib/SproutSavings.jpg'), height: 70, width: 80
+            )
+          ],
+        ),
       ),
       body: Center(
         child: Column(

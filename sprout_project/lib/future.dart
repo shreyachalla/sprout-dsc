@@ -80,7 +80,17 @@ class MyAppPageState extends State<MyAppPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Plan Your Future'),
+        title: Row(
+          children: <Widget>[
+            Text(
+              'Plan Your Future',
+            ),
+            Image(
+                image: AssetImage('lib/SproutSavings.jpg'), height: 70, width: 80
+            )
+          ],
+        ),
+        //title: Text('Plan Your Future'),
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: () => navigateToHomePage(context),
