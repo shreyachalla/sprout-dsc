@@ -128,17 +128,17 @@ class PortfolioPage extends StatelessWidget {
           BottomNavigationBarItem(
               icon: IconButton(
                   icon: Image.network(
-                      'https://static.thenounproject.com/png/3202639-200.png')),
+                      'https://static.thenounproject.com/png/3202639-200.png'), onPressed: () => {}),
               label: 'Week: \$5000.00'),
           BottomNavigationBarItem(
               icon: IconButton(
                   icon: Image.network(
-                      'https://static.thenounproject.com/png/247254-200.png')),
+                      'https://static.thenounproject.com/png/247254-200.png'), onPressed: () => {}),
               label: 'Month: \$15000.00'),
           BottomNavigationBarItem(
               icon: IconButton(
                 icon: Image.network(
-                    'https://static.thenounproject.com/png/247259-200.png'),
+                    'https://static.thenounproject.com/png/247259-200.png'), onPressed: () => {},
               ),
               label: 'Year: \$25000.00')
         ],
@@ -148,13 +148,13 @@ class PortfolioPage extends StatelessWidget {
 
   Future navigateToPortfolioSubPage(context, name) async {
     Navigator.push(
-        context, MaterialPageRoute(builder: (context) => PortfolioSubPage(name: name)));
+        context, MaterialPageRoute(builder: (context) => PortfolioSubPage(key: Key("Hello"), name: name)));
   }
 }
 
 class PortfolioSubPage extends StatelessWidget {
-  final String name;
-  PortfolioSubPage({Key key, @required this.name}) : super(key: key);
+  var name = "";
+  PortfolioSubPage({required Key key, required this.name}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -183,8 +183,8 @@ class PortfolioSubPage extends StatelessWidget {
                     textColor: Colors.blue,
                     color: Colors.white,
                     child: Text('Derivative'),
-                    onPressed: () {
-                      return showDialog(
+                    onPressed: () => {
+                       showDialog(
                         context: context,
                         builder: (ctx) => AlertDialog(
                           title: Text("Derivative"),
@@ -198,8 +198,7 @@ class PortfolioSubPage extends StatelessWidget {
                             ),
                           ],
                         ),
-                      );
-                    },
+                      )},
                   ),
                 ]),
                 TableRow(children: [
@@ -207,8 +206,8 @@ class PortfolioSubPage extends StatelessWidget {
                     textColor: Colors.blue,
                     color: Colors.white,
                     child: Text('Call Option'),
-                    onPressed: () {
-                      return showDialog(
+                    onPressed: () => {
+                       showDialog(
                         context: context,
                         builder: (ctx) => AlertDialog(
                           title: Text("Call Option"),
@@ -222,7 +221,7 @@ class PortfolioSubPage extends StatelessWidget {
                             ),
                           ],
                         ),
-                      );
+                      ),
                     },
                   ),
                 ]),
@@ -231,8 +230,8 @@ class PortfolioSubPage extends StatelessWidget {
                     textColor: Colors.blue,
                     color: Colors.white,
                     child: Text('Trading'),
-                    onPressed: () {
-                      return showDialog(
+                    onPressed: () => {
+                       showDialog(
                         context: context,
                         builder: (ctx) => AlertDialog(
                           title: Text("Trading"),
@@ -246,7 +245,7 @@ class PortfolioSubPage extends StatelessWidget {
                             ),
                           ],
                         ),
-                      );
+                      ),
                     },
                   ),
                 ]),

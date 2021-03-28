@@ -46,8 +46,8 @@ class MainPage extends StatelessWidget {
                   icon: Icon(
                     Icons.lightbulb,
                   ),
-                  onPressed: () {
-                    return showDialog(
+                  onPressed: () => {
+                    showDialog(
                       context: context,
                       builder: (ctx) => AlertDialog(
                         title: Text("Tip of the Day"),
@@ -62,7 +62,7 @@ class MainPage extends StatelessWidget {
                           ),
                         ],
                       ),
-                    );
+                    ),
                   }),
             ),
           ],

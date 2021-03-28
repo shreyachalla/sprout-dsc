@@ -10,13 +10,13 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: MyAppPage());
+    return MaterialApp(home: MyAppPage(key: Key("Hello")));
   }
 }
 
 class MyAppPage extends StatefulWidget {
   MyAppPage({
-    Key key,
+    required Key key,
   }) : super(key: key);
   @override
   MyAppPageState createState() => MyAppPageState();
@@ -53,7 +53,7 @@ class MyAppPageState extends State<MyAppPage> {
   var title3;
   var title4;
   var text = "";
-  double changed;
+  double changed = 0;
 
   void _setText() {
     setState(() {
@@ -178,9 +178,12 @@ class MyAppPageState extends State<MyAppPage> {
                       decimalPlaces: 1,
                       showChartValueLabel: true,
                       initialAngle: 0,
+                      /*
                       chartValueStyle: defaultChartValueStyle.copyWith(
-                        color: Colors.blueGrey[900].withOpacity(0.9),
+                          color: Colors.blueGrey[900].withOpacity(0.9),
                       ),
+
+                       */
                       chartType:
                           ChartType.disc, //can be changed to ChartType.ring
                     )

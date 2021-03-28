@@ -69,8 +69,8 @@ class Outline extends StatelessWidget {
                   ),
                   color: Colors.yellowAccent,
                   shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(500.0)),
-                  onPressed: () {
-                    return showDialog(
+                  onPressed: () => {
+                     showDialog(
                       context: context,
                       builder: (ctx) => AlertDialog(
                         title: Text("Tip of the Day"),
@@ -85,7 +85,7 @@ class Outline extends StatelessWidget {
                           ),
                         ],
                       ),
-                    );
+                    ),
                   })),
             ),
           ],
