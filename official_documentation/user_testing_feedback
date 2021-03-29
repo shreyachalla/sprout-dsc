@@ -1,1 +1,48 @@
+Person X 
+Background: Graduate student in mid-20s, experience working with developing countries in service projects 
 
+We showed Person X our initial ideas and sketched out mockups. Some feedback Person X gave us:
+- A simple and navigable UI can be a main value proposition to make personal finance accessible 
+- Future iterations would require connecting to government identification forms in various countries to properly show finance and life planning 
+  information 
+- Having a visual representation of financial distribution is important to transcend language barriers -- hence we implemented the pie chart 
+
+
+Person A
+Background: 18 year old college undergraduate student
+
+Approach to Personal Finance Management: 
+  - Conciously spends less than she earns 
+  - Avoids unecessary expenses
+  - Saves monthly allowance from parents 
+  - Plans out monthly expenses in paper journal 
+  - Does not have knowledge or experience in investing, but intends to invest afer graduation 
+  
+  - Phone is the primary device would use for finance management application 
+ 
+Feedback: 
+  Home Page: Dollar sign button that was there was awkwardly placed; did not recognize it was a button 
+  Porfolio Page: Very clear that it is a portfolio of stocks, but would like stock ticker visuals for each company 
+                 Calendar buttons at the bottom of the page are not clear in meaning 
+  Future Planning Page: Aesthetically pleasing, and pie chart visual is helfpul 
+  Overall: Value proposition of creating a simpler financial planning experience is evident. Would like to see further aesthetic and design streamlining. 
+
+
+
+Person B
+Background: 19 year old college undergraduate student
+
+Approach to Personal Finance Management: 
+  - Plans out monthly expenses in Excel spreadsheet 
+  - Familiar with TD and Chase banking mobile apps
+  - Does not have knowledge or experience in investing, but intends to invest afer graduation
+  - Family members are into investing 
+  
+  - Phone is the primary device would use for finance management application 
+ 
+Feedback: 
+  Weekly Recommendations Page: Fix the alignment of text, since it immediately throws the user off
+  Porfolio Page: Not familiar with what 'Derivative' and 'Call Option' mean, add a hovering definition of those terms 
+  News Page: Likes the design concept of a color gradient: darker the color of the news article, the more relevant it is 
+  Future Planning Page: Aesthetically pleasing, and pie chart visual is helfpul 
+  Overall: This app has a much simpler UI than commerical banking apps which have too much functionality. Would like to see a more developed version of this app with features to connect to credit/debit cards and live bank balance information. 
